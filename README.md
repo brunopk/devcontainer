@@ -37,6 +37,8 @@ The container is created with a workspaces directory intended to contain reposit
 
 In order to allow a container to connect with host add the following entry to the `runArgs` array in devcontainer.json:
 
-```--add-host host.docker.internal:host-gateway```
+```bash
+--add-host host.docker.internal:host-gateway
+```
 
 Then the container will be allowed to access the host machine through the **host.docker.internal** IP address
