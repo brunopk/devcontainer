@@ -1,5 +1,5 @@
 {
-  "name": "Python development",
+  "name": "Python development container",
   "context": "..",
   "dockerFile": "../Dockerfile",
   // Port 5683 udp is used by Shelly integration
