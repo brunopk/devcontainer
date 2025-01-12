@@ -6,8 +6,7 @@
 >
 > **- Set variables defined with `ARG` at the top of Dockerfile**
 
-## Start a shell in container:
-
+## Start a shell in container
 
 ```bash
  docker build -t devcontainer .
@@ -19,8 +18,25 @@ and then :
 docker run -it devcontainer /bin/zsh
 ```
 
-## Open devcontainer in Visual Code
+## Usage in Visual Code
 
-Ctrl Shift + P and then "Open folder in dev container"
+1. Start the container with `docker` command:
 
-Then clone git repositories, generate virtualenvs etc.
+    ```bash
+    docker run -it devcontainer /bin/zsh
+    ```
+
+    Clone git repositories, generate virtualenvs and all required tools for development.
+
+2. Run container in Visual Code: Ctrl Shift + P and then "Open folder in dev container"
+3. 
+
+The container is created with a workspaces directory intended to contain repositories and projects.
+
+## Useful tips
+
+In order to allow a container to connect with host add the following entry to the `runArgs` array in devcontainer.json:
+
+```--add-host host.docker.internal:host-gateway```
+
+Then the container will be allowed to access the host machine through the **host.docker.internal** IP address
