@@ -8,11 +8,13 @@
 
 ## Start a shell in container
 
+Build the image :
+
 ```bash
  docker build -t devcontainer .
 ```
 
-and then :
+Run the image starting with a ZSH shell :
 
 ```
 docker run -it devcontainer /bin/zsh
