@@ -31,7 +31,7 @@ docker run -it devcontainer /bin/zsh
     Clone git repositories, generate virtualenvs and all required tools for development.
 
 2. Run container in Visual Code: Ctrl Shift + P and then "Open folder in dev container"
-3. 
+3. Open a previously cloned repository folder in Visual Code from **container** directories. You may want to save it as a Visual code workspace later.
 
 The container is created with a workspaces directory intended to contain repositories and projects.
 

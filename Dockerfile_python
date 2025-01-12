@@ -1,11 +1,18 @@
-FROM ubuntu:20.04
+FROM python:3.12
 
 ARG USER="bruno"
 ARG USER_EMAIL="brunopiaggiok@gmail.com"
 ARG GIT_USER_NAME="brunopk"
 
+# Install tzdata
+RUN apt-get update &&\
+    TZ=Etc/UTC apt-get -y install tzdata
+
 RUN apt update && \
-    apt install -y sudo \
+    TZ=Etc/UTC && \
+    apt install --no-install-recommends -y tzdata && \
+    apt install --no-install-recommends -y sudo && \
+    sudo \
     git \
     zsh \
     curl \
