@@ -5,7 +5,25 @@ ARG USER_EMAIL="brunopiaggiok@gmail.com"
 ARG GIT_USER_NAME="brunopk"
 
 RUN apt update && \
-    apt install -y sudo git zsh curl vim
+    apt install -y sudo \
+    git \
+    zsh \
+    curl \
+    vim \ 
+    # Python dev dependencies (More info: https://github.com/pyenv/pyenv/wiki#suggested-build-environment)
+    build-essential \
+    libssl-dev \
+    zlib1g-dev \
+    libbz2-dev \ 
+    libreadline-dev \
+    libsqlite3-dev \
+    libncursesw5-dev \
+    xz-utils \ 
+    tk-dev \
+    libxml2-dev \
+    libxmlsec1-dev \
+    libffi-dev \
+    liblzma-dev
 
 # Update the package list, install sudo, create a non-root user, and grant password-less sudo permissions
 RUN adduser --disabled-password --gecos "" ${USER} && \
